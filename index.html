@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson6</title>
+</head>
+<body>
+    <script>
+
+        show5Blocks(2, 'h1');
+
+        function show5Blocks() {
+            /* коллекция arguments */
+            for (let x = 1; x <= arguments[0]; x++) {
+                document.write(`<${arguments[1]}> Header` + x + `</${arguments[1]}>`)
+            }
+        }
+
+
+        console.log(show5Blocks);
+
+        show5Blocks(3, 'h6');
+
+        let value1 = 10;
+        let value2 = 40;
+        function showMessage() {
+            let value1 = 20;
+            console.log(value1);
+        }
+
+        showMessage();
+
+        /* выведем в консоль все входные параметры ф-ции */
+        function test(...arr) {
+            for (let el of arr) {
+                console.log(el);
+            }
+        }
+        test(1, 2, 3, 4, 5);
+
+        /* возврат значений */
+        function sum(val1, val2) {
+            return val1 + val2;
+        }
+        console.log(sum(10, 20));
+        
+        function generateRandom(max) {
+            return Math.trunc(Math.random() * max);
+        }
+
+        console.log(generateRandom(10));
+
+        function test2() {
+            /* return */
+        }
+        test2();
+
+        /* калькулятор */
+        function customCalculator(val1, val2, operation) {
+            switch (operation) {
+                case '+':
+                    return `сумма чисел ${val1 + val2}`;
+                case '-':
+                    return `разность чисел ${val1 + val2}`;
+                case '*':
+                    return `произведение чисел ${val1 + val2}`;
+                case '/':
+                    return `отношение чисел ${val1 + val2}`;
+            }
+        }
+
+        let result = customCalculator(2, 3, '+');
+        console.log(result);
+
+        console.log(customCalculator(2, 3, '+'));
+        console.log(customCalculator(2, 3, '-'));
+        console.log(customCalculator(2, 3, '*'));
+
+        (function(name) {
+            console.log(`hello, ${name}!`);
+        })('сергей');
+
+        /* function expression */
+        const test3 = function(x) {
+            console.log(x);
+        }
+        text3(10);
+
+        f1();
+
+        let f1;
+
+
+
+        function test5() {
+            f1 = function test6() {
+                console.log('hello!');
+            }
+        }
+
+        f1();
+
+
+        let arr2 = [1, 2, 3]
+
+        function changeArray(arr) {
+            arr[0] = 100;
+        }
+
+        changeArray(arr2);
+
+        
+    </script>
+</body>
+</html>
